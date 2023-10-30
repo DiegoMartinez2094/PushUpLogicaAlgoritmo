@@ -7,72 +7,108 @@
   </head>
   <body>
     <script>
-      let n = Number(
+      let x = Number(
         prompt(
-          "Por favor, ingresa un número del ejercicio:" +
-            " " +
-            "1-Cual es el número n de Fibonacci,"+"  "+" 2-El número n pertenece a la serie de fibonacci?,"+"  "+ " 3-La serie de fibonacci del numero n"
+          "ingrese el numero del ejercicio que quiere: 1- fibonacci, 2-Rusa"
         )
       );
-      function elegir(n) {
-        if (n === 1) {
-          let numero = Number(prompt("Por favor, ingresa un número entero n, para mostrar el n-ésimo número de Fibonacci:"));
-          function fibonacci(numero) {
-            if (numero === 0) {
-              return alert(0);
-            } else if (numero === 1) {
-              return alert(1);
-            } else {
-              let Array = [0, 1];
-              for (let i = 2; i <= numero; i++) {
-                Array.push(Array[i - 1] + Array[i - 2]);
+
+      function ejercicio(x) {
+        if (x === 1) {
+          let n = Number(
+            prompt(
+              "Por favor, ingresa un número del ejercicio:" +
+                " " +
+                "1-Cual es el número n de Fibonacci," +
+                "  " +
+                " 2-El número n pertenece a la serie de fibonacci?," +
+                "  " +
+                " 3-La serie de fibonacci del numero n"
+            )
+          );
+          function elegir(n) {
+            if (n === 1) {
+              let numero = Number(
+                prompt(
+                  "Por favor, ingresa un número entero n, para mostrar el n-ésimo número de Fibonacci:"
+                )
+              );
+              function fibonacci(numero) {
+                if (numero === 0) {
+                  return alert(0);
+                } else if (numero === 1) {
+                  return alert(1);
+                } else {
+                  let Array = [0, 1];
+                  for (let i = 2; i <= numero; i++) {
+                    Array.push(Array[i - 1] + Array[i - 2]);
+                  }
+                  return alert(Array[Array.length - 1]);
+                }
               }
-              return alert(Array[Array.length-1]);
+              fibonacci(numero);
+            } else if (n === 2) {
+              alert("no lo he hecho");
+            } else if (n === 3) {
+              let numero = Number(
+                prompt(
+                  "Por favor, ingresa un numero m para mostar los m primeros numeros de la serie finonacci"
+                )
+              );
+              function fibonacci(numero) {
+                if (numero === 0) {
+                  return alert(0);
+                } else if (numero === 1) {
+                  return alert(1);
+                } else {
+                  let Array = [0, 1];
+                  for (let i = 2; i <= numero; i++) {
+                    Array.push(Array[i - 1] + Array[i - 2]);
+                  }
+                  return alert(Array);
+                }
+              }
+              fibonacci(numero);
             }
           }
-          fibonacci(numero);
-        }
-        else if (n === 2){
-            alert("no lo he hecho")
-        }
-        else if (n === 3){
-            let numero = Number(prompt("Por favor, ingresa un numero m para mostar los m primeros numeros de la serie finonacci"));
-          function fibonacci(numero) {
-            if (numero === 0) {
-              return alert(0);
-            } else if (numero === 1) {
-              return alert(1);
-            } else {
-              let Array = [0, 1];
-              for (let i = 2; i <= numero; i++) {
-                Array.push(Array[i - 1] + Array[i - 2]);
-              }
-              return alert(Array);
+          elegir(n);
+        } else if (x === 2) {
+          //RUSA
+          let a = Number(prompt("escribe el multiplicador"));
+          let b = Number(prompt("escribe el multiplicando"));
+          function rusa(a, b) {
+           
+            let arrayMultiplicador = [];
+            let arrayMultiplicando = [];
+            arrayMultiplicador.push(parseInt(a));
+            arrayMultiplicando.push(b);
+            let suma = 0;
+            while (a > 2) {
+              a = a / 2;
+              arrayMultiplicador.push(parseInt(a));
+              b = b * 2;
+              arrayMultiplicando.push(b);2
             }
+            alert(arrayMultiplicador);
+
+           for(let i = 0; i < arrayMultiplicador.length; i++){
+             if(arrayMultiplicador[i]%2!=0){
+                suma = arrayMultiplicando[i] + suma
+             }
+              }
+
+            alert(arrayMultiplicando);
+            alert(suma);
           }
-          fibonacci(numero);
+          rusa(a,b);
+        } else {
+          alert("tercer ejercicio");
         }
       }
-      elegir(n)
+
+      ejercicio(x);
 
       //---------------------------------------------------------------------------------------------
-
-      //RUSA
-
-      let a = Number(prompt("escribe el multiplicador"));
-      // let b = Number(prompt("escribe el multiplicando"));
-      
-      function rusa(a) {
-        arrayMultiplicador =[];
-       while(a>2){
-        a=a/2
-        alert(a)
-        arrayMultiplicador.push(a)
-       }
-       alert(arrayMultiplicador)
-    }
-      rusa(a)
-
     </script>
   </body>
 </html>
