@@ -7,6 +7,9 @@
   </head>
   <body>
     <script>
+     
+
+
       let n = Number(
         prompt(
           "Por favor, ingresa un número del ejercicio:" +
@@ -53,8 +56,27 @@
           fibonacci(numero);
         }
       }
-
       elegir(n)
+
+      //---------------------------------------------------------------------------------------------
+
+      //RUSA
+
+      let a = Number(prompt("escribe el multiplicador"));
+      // let b = Number(prompt("escribe el multiplicando"));
+      
+      function rusa(a) {
+        arrayMultiplicador =[];
+       while(a>2){
+        a=a/2
+        alert(a)
+        arrayMultiplicador.push(a)
+       }
+       alert(arrayMultiplicador)
+    }
+      rusa(a)
+
+
     </script>
   </body>
 </html>
