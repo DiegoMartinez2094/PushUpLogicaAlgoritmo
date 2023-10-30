@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n = Number(
+        prompt(
+          "Por favor, ingresa un número del ejercicio:" +
+            " " +
+            "1-Cual es el número n de Fibonacci,"+"  "+" 2-El número n pertenece a la serie de fibonacci?,"+"  "+ " 3-La serie de fibonacci del numero n"
+        )
+      );
+      function elegir(n) {
+        if (n === 1) {
+          let numero = Number(prompt("Por favor, ingresa un número entero n, para mostrar el n-ésimo número de Fibonacci:"));
+          function fibonacci(numero) {
+            if (numero === 0) {
+              return alert(0);
+            } else if (numero === 1) {
+              return alert(1);
+            } else {
+              let Array = [0, 1];
+              for (let i = 2; i <= numero; i++) {
+                Array.push(Array[i - 1] + Array[i - 2]);
+              }
+              return alert(Array[Array.length-1]);
+            }
+          }
+          fibonacci(numero);
+        }
+        else if (n === 2){
+            alert("no lo he hecho")
+        }
+        else if (n === 3){
+            let numero = Number(prompt("Por favor, ingresa un numero m para mostar los m primeros numeros de la serie finonacci"));
+          function fibonacci(numero) {
+            if (numero === 0) {
+              return alert(0);
+            } else if (numero === 1) {
+              return alert(1);
+            } else {
+              let Array = [0, 1];
+              for (let i = 2; i <= numero; i++) {
+                Array.push(Array[i - 1] + Array[i - 2]);
+              }
+              return alert(Array);
+            }
+          }
+          fibonacci(numero);
+        }
+      }
+
+      elegir(n)
+    </script>
+  </body>
+</html>
